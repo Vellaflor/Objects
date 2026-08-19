@@ -1,0 +1,4 @@
+body{background:#fff;color:#111}
+.gallery{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.gallery img{width:30%;min-width:120px;border-radius:8px;object-fit:cover}
+.btn{display:inline-block;margin:6px;padding:12px 18px;background:#111;color:#fff;text-decoration:none;border-radius:8px}
