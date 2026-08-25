@@ -24,19 +24,73 @@
         <h1>Catalogo</h1>
     <section id="catalogo" class="catalog-grid-bg">
 
-      <article class="producto-bg" style="background-image:url('https://github.com/user-attachments/assets/8bd522d9-55b9-4968-8ec1-a2c7ac34257e')">
-        <div class="card-info">
-          <h3>Velas Pequeñas</h3>
-          <a class="btn" href="https://wa.me/525610326616?text=Hola%20quiero%20info%20de%20Vela%20Pequeña" target="_blank" rel="noopener">Pedir</a>
-        </div>
-      </article>
+     <section id="catalogo" class="catalog-grid-bg">
+  <!-- Velas Pequeñas -->
+  <article class="producto-bg" data-product="velas-pequenas" style="background-image:url('https://github.com/user-attachments/assets/8bd522d9-55b9-4968-8ec1-a2c7ac34257e')">
+    <div class="card-info">
+      <h3>Velas Pequeñas</h3>
+      <a class="btn" href="https://wa.me/+525610326616?text=Hola%20quiero%20info%20de%20Velas%20Peque%C3%B1as" target="_blank" rel="noopener">Pedir</a>
+      <button class="gallery-open" aria-label="Abrir galería de Velas Pequeñas" data-gallery="velas-pequenas">Ver más fotos</button>
+    </div>
 
-      <article class="producto-bg" style="background-image:url('https://github.com/user-attachments/assets/3af64568-1aeb-4d55-84b2-609a6f59850f')">
-        <div class="card-info">
-          <h3>Velas Grandes de Colores</h3>
-          <a class="btn" href="https://wa.me/525610326616?text=Hola%20quiero%20info%20de%20Velas%20de%20Colores" target="_blank" rel="noopener">Pedir</a>
-        </div>
-      </article>
+    <div class="product-gallery" id="gallery-velas-pequenas" aria-hidden="true">
+      <div class="gallery-thumbs">
+        <button class="thumb" data-src="images/placeholder_velas_pequenas_1.jpg" aria-label="Foto 1 de Velas Pequeñas">
+          <img src="images/placeholder_velas_pequenas_1.jpg" alt="Velas Pequeñas vista 1">
+        </button>
+        <button class="thumb" data-src="images/placeholder_velas_pequenas_2.jpg" aria-label="Foto 2 de Velas Pequeñas">
+          <img src="images/placeholder_velas_pequenas_2.jpg" alt="Velas Pequeñas vista 2">
+        </button>
+        <button class="thumb" data-src="images/placeholder_velas_pequenas_3.jpg" aria-label="Foto 3 de Velas Pequeñas">
+          <img src="images/placeholder_velas_pequenas_3.jpg" alt="Velas Pequeñas vista 3">
+        </button>
+      </div>
+    </div>
+  </article>
+
+  <!-- Flores Grandes -->
+  <article class="producto-bg" data-product="flores-grandes" style="background-image:url('images/placeholder_flores_grandes_1.jpg')">
+    <div class="card-info">
+      <h3>Flores Grandes</h3>
+      <a class="btn" href="https://wa.me/+525610326616?text=Hola%20quiero%20info%20de%20Flores%20Grandes" target="_blank" rel="noopener">Pedir</a>
+      <button class="gallery-open" aria-label="Abrir galería de Flores Grandes" data-gallery="flores-grandes">Ver más fotos</button>
+    </div>
+
+    <div class="product-gallery" id="gallery-flores-grandes" aria-hidden="true">
+      <div class="gallery-thumbs">
+        <button class="thumb" data-src="images/placeholder_flores_grandes_1.jpg" aria-label="Foto 1 de Flores Grandes">
+          <img src="images/placeholder_flores_grandes_1.jpg" alt="Flores Grandes vista 1">
+        </button>
+        <button class="thumb" data-src="images/placeholder_flores_grandes_2.jpg" aria-label="Foto 2 de Flores Grandes">
+          <img src="images/placeholder_flores_grandes_2.jpg" alt="Flores Grandes vista 2">
+        </button>
+      </div>
+    </div>
+  </article>
+
+  <!-- Terrarios -->
+  <article class="producto-bg" data-product="terrarios" style="background-image:url('images/placeholder_terrarios_1.jpg')">
+    <div class="card-info">
+      <h3>Terrarios</h3>
+      <a class="btn" href="https://wa.me/+525610326616?text=Hola%20quiero%20info%20de%20Terrarios" target="_blank" rel="noopener">Pedir</a>
+      <button class="gallery-open" aria-label="Abrir galería de Terrarios" data-gallery="terrarios">Ver más fotos</button>
+    </div>
+
+    <div class="product-gallery" id="gallery-terrarios" aria-hidden="true">
+      <div class="gallery-thumbs">
+        <button class="thumb" data-src="images/placeholder_terrarios_1.jpg" aria-label="Foto 1 de Terrarios">
+          <img src="images/placeholder_terrarios_1.jpg" alt="Terrarios vista 1">
+        </button>
+        <button class="thumb" data-src="images/placeholder_terrarios_2.jpg" aria-label="Foto 2 de Terrarios">
+          <img src="images/placeholder_terrarios_2.jpg" alt="Terrarios vista 2">
+        </button>
+        <button class="thumb" data-src="images/placeholder_terrarios_3.jpg" aria-label="Foto 3 de Terrarios">
+          <img src="images/placeholder_terrarios_3.jpg" alt="Terrarios vista 3">
+        </button>
+      </div>
+    </div>
+  </article>
+</section>
 
       <!-- Repite article por cada producto, cambiando la ruta de la imagen y el texto -->
     </section>
