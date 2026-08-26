@@ -101,5 +101,82 @@
       <!-- Repite article por cada producto, cambiando la ruta de la imagen y el texto -->
     </section>
   </main>
+
+  <script>
+document.addEventListener('click', function(e){
+  const openBtn = e.target.closest('.gallery-open');
+  if(openBtn){
+    const id = openBtn.dataset.gallery;
+    const gallery = document.getElementById('gallery-' + id);
+    if(!gallery) return;
+    const imgs = Array.from(gallery.querySelectorAll('.thumb')).map(t=>t.dataset.src);
+    openLightbox(imgs, 0);
+  }
+
+  const thumb = e.target.closest('.thumb');
+  if(thumb){
+    const galleryEl = thumb.closest('.product-gallery');
+    if(!galleryEl) return;
+    const imgs = Array.from(galleryEl.querySelectorAll('.thumb')).map(t=>t.dataset.src);
+    const index = imgs.indexOf(thumb.dataset.src);
+    openLightbox(imgs, index >= 0 ? index : 0);
+  }
+});
+
+let lbBackdrop, lbImg, currentImgs, currentIndex;
+
+function createLightbox(){
+  lbBackdrop = document.createElement('div');
+  lbBackdrop.className = 'lightbox-backdrop';
+  lbBackdrop.innerHTML = `
+    <div class="lightbox" role="dialog" aria-modal="true">
+      <button class="lb-btn lb-prev" aria-label="Anterior">&#10094;</button>
+      <img src="" alt="">
+      <button class="lb-btn lb-next" aria-label="Siguiente">&#10095;</button>
+      <button class="lb-close" aria-label="Cerrar">✕</button>
+    </div>`;
+  document.body.appendChild(lbBackdrop);
+  lbImg = lbBackdrop.querySelector('img');
+
+  lbBackdrop.addEventListener('click', function(ev){
+    if(ev.target === lbBackdrop || ev.target.classList.contains('lb-close')) closeLightbox();
+  });
+  lbBackdrop.querySelector('.lb-prev').addEventListener('click', ()=>showIndex(currentIndex-1));
+  lbBackdrop.querySelector('.lb-next').addEventListener('click', ()=>showIndex(currentIndex+1));
+  document.addEventListener('keydown', function(ev){
+    if(!lbBackdrop.classList.contains('open')) return;
+    if(ev.key === 'Escape') closeLightbox();
+    if(ev.key === 'ArrowLeft') showIndex(currentIndex-1);
+    if(ev.key === 'ArrowRight') showIndex(currentIndex+1);
+  });
+}
+
+function openLightbox(imgs, startIndex){
+  if(!lbBackdrop) createLightbox();
+  currentImgs = imgs;
+  showIndex(startIndex || 0);
+  lbBackdrop.classList.add('open');
+  lbBackdrop.setAttribute('aria-hidden','false');
+}
+
+function closeLightbox(){
+  if(!lbBackdrop) return;
+  lbBackdrop.classList.remove('open');
+  lbBackdrop.setAttribute('aria-hidden','true');
+  lbImg.src = '';
+  currentImgs = null;
+  currentIndex = null;
+}
+
+function showIndex(i){
+  if(!currentImgs) return;
+  if(i < 0) i = currentImgs.length - 1;
+  if(i >= currentImgs.length) i = 0;
+  currentIndex = i;
+  lbImg.src = currentImgs[i];
+  lbImg.alt = 'Imagen ' + (i+1) + ' de ' + currentImgs.length;
+}
+</script>
+
 </body>
 </html>
