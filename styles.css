@@ -81,3 +81,76 @@ body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#111;background:#fff}
 }
 .card-info h3{margin:0 0 8px}
 .card-info .btn{background:#fff;color:#111;padding:8px 12px;border-radius:8px;text-decoration:none}
+
+/* Galería: botón y miniaturas dentro del producto */
+.gallery-open{
+  margin-top:10px;
+  background:rgba(255,255,255,0.12);
+  color:#fff;
+  border:1px solid rgba(255,255,255,0.12);
+  padding:8px 10px;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+/* Modal lightbox */
+.lightbox-backdrop{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.85);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .18s ease;
+}
+.lightbox-backdrop.open{opacity:1;pointer-events:auto}
+
+/* Contenedor de imagen */
+.lightbox{
+  max-width:92%;
+  max-height:92%;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.lightbox img{
+  max-width:100%;
+  max-height:100%;
+  border-radius:8px;
+  box-shadow:0 10px 40px rgba(0,0,0,0.6);
+}
+
+/* Controles */
+.lb-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:rgba(255,255,255,0.12);
+  color:#fff;
+  border:none;
+  padding:10px;
+  border-radius:8px;
+  cursor:pointer;
+}
+.lb-prev{left:12px}
+.lb-next{right:12px}
+.lb-close{
+  position:absolute;
+  top:12px;
+  right:12px;
+  background:rgba(255,255,255,0.12);
+  color:#fff;
+  border:none;
+  padding:8px;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+/* Miniaturas dentro del producto */
+.gallery-thumbs{display:flex;gap:8px;margin-top:12px}
+.gallery-thumbs .thumb{border:2px solid rgba(255,255,255,0.06);padding:2px;border-radius:6px;background:transparent;cursor:pointer}
+.gallery-thumbs .thumb img{width:64px;height:48px;object-fit:cover;display:block;border-radius:4px}
